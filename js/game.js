@@ -254,13 +254,12 @@ var GameLayer = cc.Layer.extend({
         });
         this.slingRubber3 = null;
 
-        // --------- Top Menu ! ---------
 
         var margin = 25,
             backMenu = new CMenu(this.getTexture("menu_back"));
         backMenu.setPosition(cc.p(margin, winSize.height - margin));
         backMenu.onClick(function () {
-            window.location.href = "https://code.org";
+            window.location.href = "https://github.com/vibhu0209";
         });
         this.addChild(backMenu);
         this.menus.push(backMenu);
@@ -273,8 +272,6 @@ var GameLayer = cc.Layer.extend({
         this.addChild(refreshMenu);
         this.menus.push(refreshMenu);
 
-        // --------- My Score ! ---------
-
         var scoreLabel = cc.LabelTTF.create("0", "fantasy", 20, cc.size(0, 0), cc.TEXT_ALIGNMENT_LEFT);
         scoreLabel.setPosition(cc.p(winSize.width - 80, winSize.height));
         scoreLabel.schedule(function () {
@@ -286,7 +283,6 @@ var GameLayer = cc.Layer.extend({
         });
         this.addChild(scoreLabel, 5);
 
-        // --------- Setup Sling's Bomb ! ---------
 
         var action = cc.Spawn.create(cc.RotateBy.create(1.5, 360), cc.JumpTo.create(1.5, this.birdStartPos, 100, 1));
         this.birdSprite.runAction(action);
@@ -410,8 +406,6 @@ var GameLayer = cc.Layer.extend({
 });
 
 
-//--------------------- Scene ---------------------
-
 var GameScene = cc.Scene.extend({
     onEnter: function () {
         this._super();
@@ -422,3 +416,4 @@ var GameScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
+
